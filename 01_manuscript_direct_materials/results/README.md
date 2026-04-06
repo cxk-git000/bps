@@ -1,7 +1,7 @@
 # Results
 
 This directory contains the current checked-in result folders that directly
-support the manuscript-facing section of the curated release.
+support the main result section of the repository.
 
 ## Layout
 

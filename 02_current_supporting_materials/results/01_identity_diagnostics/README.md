@@ -22,6 +22,6 @@ The canonical base matrix consists of:
 
 This is the first place to inspect if you want to understand why guarded layouts were introduced before the full main experiments.
 
-This curated release keeps the checked-in base matrix above as the current
+This repository keeps the checked-in base matrix above as the current
 identity-diagnostic reference set.
 

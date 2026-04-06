@@ -1,7 +1,7 @@
 # Code Directory
 
 This directory contains the experiment code and the local dependency material
-needed to understand or rebuild the study from the curated release.
+needed to understand or rebuild the study.
 
 ## Contents
 
@@ -10,7 +10,7 @@ needed to understand or rebuild the study from the curated release.
 - `src/`
   - Rust binaries for the main experiment driver and the identity diagnostic
 - `scripts/`
-  - manuscript-facing orchestration scripts and figure/table generators
+  - orchestration scripts and figure/table generators
 - `docs/`
   - current implementation notes for the accumulator and PBS path
 - `library_modified/`

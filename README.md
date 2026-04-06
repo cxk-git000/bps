@@ -1,15 +1,11 @@
 # BPS
 
-This repository is a reviewer-facing GitHub package for the shared-input
-dual-function programmable-bootstrapping study in TFHE.
-
-It is intended to be readable without a separate manuscript PDF. The repository
-contains the current experiment code, checked-in results, manuscript-ready
+The repository contains the current experiment code, checked-in results, and
 figures and tables, and supporting implementation notes.
 
 ## What This Repository Studies
 
-The artifact compares three ways to evaluate activation-derivative pairs at one
+The repository compares three ways to evaluate activation-derivative pairs at one
 encrypted input:
 
 - `Standard PBS`
@@ -52,20 +48,3 @@ continuous-function evaluation dependable at the validated operating points.
   - buildable code, canonical checked-in results, and manuscript-ready assets
 - `02_current_supporting_materials/`
   - identity diagnostics, revision runs, and implementation notes
-
-## Intentional Exclusions
-
-- `.git/`
-- `code/target/`
-- `results/regenerated/`
-- `docs/archive_policy.md`
-- `docs/archive/`
-- `tmp/`
-
-## Completeness Note
-
-- All current non-archive experiment code, current canonical results,
-  current revision results, current manuscript assets, and current explanation
-  documents from `BPS_LOCAL_FINAL_20260403` have been placed into this package.
-- The only intentional exclusions are build outputs, cache directories, and
-  archive-only material.

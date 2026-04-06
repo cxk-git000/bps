@@ -1,6 +1,6 @@
 # Scripts
 
-This directory contains the manuscript-facing orchestration layer around the
+This directory contains the orchestration layer around the
 Rust binaries.
 
 ## Files

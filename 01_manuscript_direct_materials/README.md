@@ -3,8 +3,6 @@
 This folder contains the buildable code, checked-in canonical results, and
 manuscript-ready assets that support the main claims of the repository.
 
-It is intended to be understandable without a separate manuscript PDF.
-
 ## Layout
 
 - `code/`
@@ -16,7 +14,7 @@ It is intended to be understandable without a separate manuscript PDF.
   - canonical checked-in result folders used for the main repository claims
 
 - `manuscript_assets/`
-  - compact reviewer-facing figures and tables
+  - compact figures and tables
   - includes the current supplemental tables `tbl06_*` and `tbl07_*`
 
 - `docs/`

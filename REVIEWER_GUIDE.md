@@ -1,8 +1,3 @@
-# Reviewer Guide
-
-This guide is the fastest way to inspect the repository without relying on a
-separate manuscript PDF.
-
 ## Scope
 
 The repository studies shared-input dual-function evaluation in TFHE for

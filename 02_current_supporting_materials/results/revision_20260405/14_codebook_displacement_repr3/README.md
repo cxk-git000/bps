@@ -1,7 +1,7 @@
 # 14 Codebook Displacement Representative Three Pairs
 
 This folder contains the compact three-pair displacement summary used for the
-reviewer-facing revision tables.
+revision summary tables.
 
 ## Files
 

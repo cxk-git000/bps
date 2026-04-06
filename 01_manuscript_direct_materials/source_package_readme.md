@@ -1,13 +1,12 @@
-# Current Source Snapshot
+# Repository Structure Note
 
-This note describes the current project snapshot that served as the source for
-this curated release.
+This note describes the project structure used to assemble this repository.
 
-Source snapshot:
+Source directory:
 
 - `BPS_LOCAL_FINAL_20260403/`
 
-In the source snapshot, the active project material was organized around:
+The source material was organized around:
 
 - `code/`
   - current experiment code, scripts, vendored dependency, and build files
@@ -22,14 +21,14 @@ In the source snapshot, the active project material was organized around:
 - `docs/`
   - current reproduction and experiment-map documentation
 
-In this curated release, that source snapshot has been reorganized into:
+In this repository, that material is organized into:
 
 - `01_manuscript_direct_materials/`
-  - manuscript-facing code, results, and manuscript assets
+  - main code, results, and manuscript assets
 - `02_current_supporting_materials/`
   - current diagnostics, revision results, working notes, and supporting scripts
 
-Intentional exclusions from the curated release:
+Intentional exclusions:
 
 - Git metadata
 - build outputs under `code/target/`

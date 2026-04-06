@@ -1,9 +1,8 @@
-# Current Project Overview
+# Project Structure Overview
 
-This note summarizes the current project snapshot used to assemble the curated
-release.
+This note summarizes the repository structure.
 
-The active source snapshot centers on:
+The active project material centers on:
 
 - `code/`
   - Rust experiment drivers, support scripts, and the vendored dependency tree
@@ -14,10 +13,10 @@ The active source snapshot centers on:
 - `docs/`
   - reproduction flow, experiment map, and library-change notes
 
-In the curated release, the same current material is split into:
+The repository is split into:
 
 - `01_manuscript_direct_materials/`
-  - manuscript-facing code, canonical results, manuscript assets, and manuscript files
+  - main code, canonical results, and manuscript assets
 - `02_current_supporting_materials/`
   - diagnostics, revision runs, implementation notes, and supporting scripts
 

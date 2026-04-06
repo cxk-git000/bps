@@ -16,6 +16,6 @@ analysis but are not part of the main checked-in canonical pipeline.
   - writes fresh outputs under `../results/reproduced/paper_queue_batch/` by default
 
 - `generate_revision_tables.py`
-  - builds the reviewer-facing summary tables `tbl06_*` and `tbl07_*`
+  - builds the summary tables `tbl06_*` and `tbl07_*`
   - reads supporting revision results and canonical bitwidth results
   - writes into `../../01_manuscript_direct_materials/manuscript_assets/tables/`

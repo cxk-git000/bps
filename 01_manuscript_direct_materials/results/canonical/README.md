@@ -2,7 +2,7 @@
 
 This directory is the main result tree for the repository.
 
-Start here for the manuscript-facing result folders.
+Start here for the main checked-in result folders.
 
 Recommended order:
 

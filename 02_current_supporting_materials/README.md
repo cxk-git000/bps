@@ -2,7 +2,7 @@
 
 This folder keeps current material that does not directly enter the body of the current manuscript.
 
-It is separated so the paper-facing bundle stays clean, while the extra material remains available for review.
+It is separated so the main result section stays focused, while the extra material remains available for review.
 
 ## Layout
 
@@ -16,7 +16,7 @@ It is separated so the paper-facing bundle stays clean, while the extra material
   - explanation files for purpose, code location, and result location
 
 - `notes/`
-  - current manuscript and implementation notes preserved from the source snapshot
+  - current manuscript and implementation notes
 
 ## Included material
 

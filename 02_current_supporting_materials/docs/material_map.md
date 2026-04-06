@@ -50,10 +50,10 @@ This material does not directly appear in the current manuscript body, but it st
   - current implementation notes for accumulator repair and PBS behavior
 
 - `notes/manuscript_notes/`
-  - current manuscript rewrite notes retained from the source snapshot
+  - current manuscript rewrite notes
 
 - `notes/workspace_notes/`
-  - current workspace-level investigation notes retained from the source snapshot
+  - current workspace-level investigation notes
 
 - `results/revision_20260405/README.md`
   - overview of the revision-only checked-in result folders

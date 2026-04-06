@@ -1,7 +1,6 @@
 # Reproduction Guide
 
-This repository should be readable as a reviewer-facing GitHub artifact rather
-than as a raw lab snapshot.
+This repository is organized as a reproducible project package.
 
 ## Environment
 
@@ -63,7 +62,7 @@ Notes:
   `02_current_supporting_materials/results/reproduced/` by default.
 - The next three commands write fresh outputs under
   `01_manuscript_direct_materials/results/regenerated/`.
-- The final Python command updates the checked-in reviewer-facing tables
+- The final Python command updates the checked-in summary tables
   `tbl06_*` and `tbl07_*` under
   `01_manuscript_direct_materials/manuscript_assets/tables/`.
 - `run_identity_matrix.ps1` is not a seconds-level smoke test; with the checked-in matrix settings it should be budgeted as a multi-minute diagnostic batch.

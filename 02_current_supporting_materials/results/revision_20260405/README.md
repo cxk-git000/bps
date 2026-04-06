@@ -16,5 +16,5 @@ review but are not part of the main canonical claim path.
 - `../../code/scripts/generate_revision_tables.py`
   - reads `14_codebook_displacement_repr3/codebook_summary.csv`
   - combines it with canonical bitwidth summaries
-  - writes reviewer-facing tables into
+  - writes summary tables into
     `../../../01_manuscript_direct_materials/manuscript_assets/tables/`

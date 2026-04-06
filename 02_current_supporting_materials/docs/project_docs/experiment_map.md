@@ -1,7 +1,6 @@
 # Experiment Map
 
-This file maps the repository's code and scripts to the checked-in result folders
-used in the GitHub package.
+This file maps the repository's code and scripts to the checked-in result folders.
 
 ## Core Drivers
 
@@ -23,7 +22,7 @@ used in the GitHub package.
 - `01_manuscript_direct_materials/code/scripts/generate_supplementary_figures.py`
   - canonical figures and tables
 - `02_current_supporting_materials/code/scripts/generate_revision_tables.py`
-  - reviewer-facing revision summary tables
+  - revision summary tables
 
 ## Result Mapping
 
