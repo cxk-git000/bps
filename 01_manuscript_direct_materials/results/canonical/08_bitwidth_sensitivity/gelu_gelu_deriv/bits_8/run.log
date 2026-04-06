@@ -1,0 +1,25 @@
+[2026-03-23T16:13:07] START 08_bitwidth_sensitivity\gelu_gelu_deriv\bits_8
+building runtimes...
+runtime standard           | lwe_dim=1012 poly=2048 pbs=(15,2) | seed=64104 | bsk_gen=0.34s fourier=0.24s
+runtime sdr_pbs              | lwe_dim=1012 poly=2048 pbs=(15,2) | seed=68200 | bsk_gen=0.35s fourier=0.02s
+runtime many-lut           | lwe_dim=1012 poly=8192 pbs=(15,2) | seed=72296 | bsk_gen=2.53s fourier=0.34s
+
+=== gelu_gelu_deriv ===
+gelu_gelu_deriv | standard_pbs | bits=8 | points=1000
+  significant errors > 1.0% range: 261
+  projection events: 0 | invalid outputs: 0 | avg eval: 48900.60 us
+  output1 [-0.1700, 4.0000] mean=1.855e-2 rmse=2.915e-2 p95=6.704e-2 max=1.345e-1
+  output2 [-0.1200, 1.1200] mean=5.566e-3 rmse=1.158e-2 p95=2.774e-2 max=8.873e-2
+gelu_gelu_deriv | sdr_pbs | bits=8 | points=1000
+  significant errors > 1.0% range: 251
+  projection events: 1000 | invalid outputs: 0 | avg eval: 24648.46 us
+  output1 [-0.1700, 4.0000] mean=1.766e-2 rmse=2.777e-2 p95=6.411e-2 max=1.296e-1
+  output2 [-0.1200, 1.1200] mean=5.829e-3 rmse=1.181e-2 p95=2.697e-2 max=8.988e-2
+gelu_gelu_deriv | many_lut | bits=8 | points=1000
+  significant errors > 1.0% range: 84
+  projection events: 0 | invalid outputs: 0 | avg eval: 105133.03 us
+  output1 [-0.1700, 4.0000] mean=1.039e-2 rmse=1.570e-2 p95=3.992e-2 max=6.148e-2
+  output2 [-0.1200, 1.1200] mean=3.216e-3 rmse=6.166e-3 p95=1.286e-2 max=3.910e-2
+
+summary written to D:\Re-test-artifacts\paper-results\08_bitwidth_sensitivity\gelu_gelu_deriv\bits_8\summary.csv
+[2026-03-23T16:16:12] END   08_bitwidth_sensitivity\gelu_gelu_deriv\bits_8

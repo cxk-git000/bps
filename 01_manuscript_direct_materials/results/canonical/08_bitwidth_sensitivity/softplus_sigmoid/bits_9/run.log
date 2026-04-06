@@ -1,0 +1,25 @@
+[2026-03-23T15:49:46] START 08_bitwidth_sensitivity\softplus_sigmoid\bits_9
+building runtimes...
+runtime standard           | lwe_dim=1012 poly=4096 pbs=(15,2) | seed=64105 | bsk_gen=0.92s fourier=0.28s
+runtime sdr_pbs              | lwe_dim=1012 poly=4096 pbs=(15,2) | seed=68201 | bsk_gen=0.90s fourier=0.05s
+runtime many-lut           | lwe_dim=1012 poly=8192 pbs=(15,2) | seed=72297 | bsk_gen=2.46s fourier=0.34s
+
+=== softplus_sigmoid ===
+softplus_sigmoid | standard_pbs | bits=9 | points=1000
+  significant errors > 1.0% range: 19
+  projection events: 0 | invalid outputs: 0 | avg eval: 104210.93 us
+  output1 [0.0180, 4.0180] mean=7.898e-3 rmse=1.198e-2 p95=2.698e-2 max=6.970e-2
+  output2 [0.0000, 1.0000] mean=1.879e-3 rmse=2.755e-3 p95=6.350e-3 max=1.264e-2
+softplus_sigmoid | sdr_pbs | bits=9 | points=1000
+  significant errors > 1.0% range: 19
+  projection events: 1000 | invalid outputs: 0 | avg eval: 52025.84 us
+  output1 [0.0180, 4.0180] mean=8.455e-3 rmse=1.216e-2 p95=2.734e-2 max=5.000e-2
+  output2 [0.0000, 1.0000] mean=2.091e-3 rmse=3.029e-3 p95=6.773e-3 max=1.344e-2
+softplus_sigmoid | many_lut | bits=9 | points=1000
+  significant errors > 1.0% range: 11
+  projection events: 0 | invalid outputs: 0 | avg eval: 106207.98 us
+  output1 [0.0180, 4.0180] mean=7.809e-3 rmse=1.130e-2 p95=2.543e-2 max=5.100e-2
+  output2 [0.0000, 1.0000] mean=1.983e-3 rmse=2.910e-3 p95=6.491e-3 max=1.439e-2
+
+summary written to D:\Re-test-artifacts\paper-results\08_bitwidth_sensitivity\softplus_sigmoid\bits_9\summary.csv
+[2026-03-23T15:54:18] END   08_bitwidth_sensitivity\softplus_sigmoid\bits_9

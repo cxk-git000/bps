@@ -1,0 +1,15 @@
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{tabular}{llllllll}
+\toprule
+Pair & Scheme & Bits & Exact (\%) & Both $|\tau|\leq 1$ (\%) & Both $|\tau|\leq 2$ (\%) & Avg. $|\tau_1|$ & Avg. $|\tau_2|$ \\
+\midrule
+tanh / $\mathrm{sech}^2$ & Standard PBS & 10 & 33.98 & 47.36 & 70.51 & 0.849 & 1.688 \\
+tanh / $\mathrm{sech}^2$ & SDR-PBS & 10 & 27.34 & 44.04 & 68.26 & 0.874 & 1.873 \\
+softplus / $\sigma$ & Standard PBS & 10 & 40.72 & 58.30 & 86.43 & 0.874 & 0.858 \\
+softplus / $\sigma$ & SDR-PBS & 10 & 35.84 & 56.54 & 86.43 & 0.862 & 0.908 \\
+GELU / GELU$'$ & Standard PBS & 10 & 49.51 & 61.52 & 79.59 & 0.843 & 1.050 \\
+GELU / GELU$'$ & SDR-PBS & 10 & 44.53 & 57.52 & 76.95 & 0.971 & 1.117 \\
+\bottomrule
+\end{tabular}

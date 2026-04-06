@@ -1,0 +1,3 @@
+sigmoid_sigmoid_deriv | samples=200000 | output1 observed=[0.002472623157,0.997527376843] declared=[0.000000000000,1.000000000000] clipped=false | output2 observed=[0.002466509291,0.250000000000] declared=[0.000000000000,0.250000000000] clipped=false
+softplus_sigmoid | samples=200000 | output1 observed=[0.018149927918,4.018149927918] declared=[0.018000000000,4.018000000000] clipped=true | output2 observed=[0.017986209962,0.982013790038] declared=[0.000000000000,1.000000000000] clipped=false
+gelu_gelu_deriv | samples=200000 | output1 observed=[-0.163610189630,3.995585275860] declared=[-0.170000000000,4.000000000000] clipped=false | output2 observed=[-0.099839320120,1.099839320120] declared=[-0.120000000000,1.120000000000] clipped=false

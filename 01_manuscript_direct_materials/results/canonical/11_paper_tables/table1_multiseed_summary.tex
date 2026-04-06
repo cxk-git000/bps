@@ -1,0 +1,29 @@
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llllllll}
+\toprule
+pair & scheme & mean\_error\_rate & std\_error\_rate & mean\_rmse1 & mean\_rmse2 & mean\_eval\_us & std\_eval\_us \\
+\midrule
+ELU / ELU' & Many-LUT & 0.055 & 0.003606 & 0.01182 & 0.004399 & 110562.99 & 6951.62 \\
+ELU / ELU' & SDR-PBS & 0.01467 & 0.003055 & 0.006292 & 0.002498 & 111099.72 & 7013.36 \\
+ELU / ELU' & Standard PBS & 0.008 & 0.003606 & 0.006017 & 0.002172 & 222220.20 & 11366.62 \\
+GELU / GELU' & Many-LUT & 0.08133 & 0.0125 & 0.0137 & 0.005763 & 109891.96 & 6573.83 \\
+GELU / GELU' & SDR-PBS & 0.016 & 0.002 & 0.007116 & 0.003278 & 110382.86 & 6359.65 \\
+GELU / GELU' & Standard PBS & 0.011 & 0.004 & 0.00713 & 0.00291 & 220789.20 & 11563.76 \\
+mish / mish' & Many-LUT & 0.05167 & 0.004163 & 0.01129 & 0.004884 & 109651.02 & 5967.44 \\
+mish / mish' & SDR-PBS & 0.002333 & 0.001155 & 0.005918 & 0.002597 & 110201.32 & 6838.67 \\
+mish / mish' & Standard PBS & 0.001333 & 0.0005774 & 0.005502 & 0.002398 & 220167.50 & 13380.01 \\
+sigmoid / \$\textbackslash\{\}sigma'\$ & Many-LUT & 0.1207 & 0.002082 & 0.003548 & 0.001511 & 111960.96 & 6484.12 \\
+sigmoid / \$\textbackslash\{\}sigma'\$ & SDR-PBS & 0.01667 & 0.004041 & 0.001773 & 0.0008036 & 112040.14 & 7159.23 \\
+sigmoid / \$\textbackslash\{\}sigma'\$ & Standard PBS & 0.01433 & 0.002082 & 0.001729 & 0.0007695 & 221193.58 & 12605.50 \\
+softplus / \$\textbackslash\{\}sigma\$ & Many-LUT & 0.015 & 0.003464 & 0.01205 & 0.00275 & 111400.43 & 5719.65 \\
+softplus / \$\textbackslash\{\}sigma\$ & SDR-PBS & 0 & 0 & 0.006079 & 0.001513 & 111377.37 & 5655.76 \\
+softplus / \$\textbackslash\{\}sigma\$ & Standard PBS & 0 & 0 & 0.005959 & 0.001416 & 222157.99 & 11307.89 \\
+swish / swish' & Many-LUT & 0.041 & 0.008185 & 0.01345 & 0.00452 & 111396.23 & 5724.97 \\
+swish / swish' & SDR-PBS & 0.002 & 0.001732 & 0.006952 & 0.00241 & 111369.43 & 5660.80 \\
+swish / swish' & Standard PBS & 0.0006667 & 0.001155 & 0.006839 & 0.002208 & 222051.74 & 10924.66 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & Many-LUT & 0.058 & 0.007937 & 0.005534 & 0.004898 & 111166.67 & 5758.07 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & SDR-PBS & 0.001667 & 0.001528 & 0.002912 & 0.002629 & 110772.93 & 5890.58 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & Standard PBS & 0.001333 & 0.001528 & 0.002778 & 0.002429 & 222593.80 & 11238.95 \\
+\bottomrule
+\end{tabular}

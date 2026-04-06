@@ -1,0 +1,19 @@
+[2026-03-23T16:01:36] START 08_bitwidth_sensitivity\softplus_sigmoid\bits_11
+building runtimes...
+runtime standard           | lwe_dim=1012 poly=16384 pbs=(15,2) | seed=64107 | bsk_gen=6.94s fourier=0.46s
+runtime sdr_pbs              | lwe_dim=1012 poly=16384 pbs=(15,2) | seed=68203 | bsk_gen=6.88s fourier=0.22s
+
+=== softplus_sigmoid ===
+softplus_sigmoid | standard_pbs | bits=11 | points=1000
+  significant errors > 1.0% range: 0
+  projection events: 0 | invalid outputs: 0 | avg eval: 446409.39 us
+  output1 [0.0180, 4.0180] mean=2.046e-3 rmse=3.055e-3 p95=6.433e-3 max=1.588e-2
+  output2 [0.0000, 1.0000] mean=4.951e-4 rmse=7.262e-4 p95=1.550e-3 max=3.157e-3
+softplus_sigmoid | sdr_pbs | bits=11 | points=1000
+  significant errors > 1.0% range: 0
+  projection events: 1000 | invalid outputs: 0 | avg eval: 222216.53 us
+  output1 [0.0180, 4.0180] mean=2.033e-3 rmse=3.015e-3 p95=6.936e-3 max=1.341e-2
+  output2 [0.0000, 1.0000] mean=5.031e-4 rmse=7.348e-4 p95=1.619e-3 max=3.750e-3
+
+summary written to D:\Re-test-artifacts\paper-results\08_bitwidth_sensitivity\softplus_sigmoid\bits_11\summary.csv
+[2026-03-23T16:13:07] END   08_bitwidth_sensitivity\softplus_sigmoid\bits_11

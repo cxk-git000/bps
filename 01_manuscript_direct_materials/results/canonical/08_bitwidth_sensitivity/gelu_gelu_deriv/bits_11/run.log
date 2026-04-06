@@ -1,0 +1,19 @@
+[2026-03-23T16:28:04] START 08_bitwidth_sensitivity\gelu_gelu_deriv\bits_11
+building runtimes...
+runtime standard           | lwe_dim=1012 poly=16384 pbs=(15,2) | seed=64107 | bsk_gen=6.92s fourier=0.46s
+runtime sdr_pbs              | lwe_dim=1012 poly=16384 pbs=(15,2) | seed=68203 | bsk_gen=6.84s fourier=0.25s
+
+=== gelu_gelu_deriv ===
+gelu_gelu_deriv | standard_pbs | bits=11 | points=1000
+  significant errors > 1.0% range: 0
+  projection events: 0 | invalid outputs: 0 | avg eval: 443750.19 us
+  output1 [-0.1700, 4.0000] mean=2.232e-3 rmse=3.501e-3 p95=7.913e-3 max=1.690e-2
+  output2 [-0.1200, 1.1200] mean=7.318e-4 rmse=1.494e-3 p95=3.876e-3 max=1.051e-2
+gelu_gelu_deriv | sdr_pbs | bits=11 | points=1000
+  significant errors > 1.0% range: 0
+  projection events: 1000 | invalid outputs: 0 | avg eval: 222569.48 us
+  output1 [-0.1700, 4.0000] mean=2.270e-3 rmse=3.510e-3 p95=8.259e-3 max=1.468e-2
+  output2 [-0.1200, 1.1200] mean=7.538e-4 rmse=1.580e-3 p95=3.834e-3 max=1.208e-2
+
+summary written to D:\Re-test-artifacts\paper-results\08_bitwidth_sensitivity\gelu_gelu_deriv\bits_11\summary.csv
+[2026-03-23T16:39:32] END   08_bitwidth_sensitivity\gelu_gelu_deriv\bits_11

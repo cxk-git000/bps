@@ -1,0 +1,32 @@
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llllll}
+\toprule
+ablation\_pair & ablation\_config & scheme & worst\_max & error\_rate & avg\_eval\_us \\
+\midrule
+sigmoid / \$\textbackslash\{\}sigma'\$ & F1/O0 & Standard PBS & 0.01137 & 0.016 & 102883.62 \\
+sigmoid / \$\textbackslash\{\}sigma'\$ & F1/O0 & SDR-PBS & 0.009624 & 0.014 & 52277.43 \\
+sigmoid / \$\textbackslash\{\}sigma'\$ & F2/O0 & Standard PBS & 0.2453 & 0.009 & 212592.38 \\
+sigmoid / \$\textbackslash\{\}sigma'\$ & F2/O0 & SDR-PBS & 0.009408 & 0.027 & 106224.34 \\
+sigmoid / \$\textbackslash\{\}sigma'\$ & F2/O256 & Standard PBS & 0.00884 & 0.008 & 211467.99 \\
+sigmoid / \$\textbackslash\{\}sigma'\$ & F2/O256 & SDR-PBS & 0.009408 & 0.027 & 105807.22 \\
+sigmoid / \$\textbackslash\{\}sigma'\$ & F2/O512 & Standard PBS & 0.00884 & 0.008 & 212715.10 \\
+sigmoid / \$\textbackslash\{\}sigma'\$ & F2/O512 & SDR-PBS & 0.009408 & 0.027 & 106561.14 \\
+softplus / \$\textbackslash\{\}sigma\$ & F1/O0 & Standard PBS & 0.02365 & 0 & 106987.78 \\
+softplus / \$\textbackslash\{\}sigma\$ & F1/O0 & SDR-PBS & 0.02679 & 0 & 53141.01 \\
+softplus / \$\textbackslash\{\}sigma\$ & F2/O0 & Standard PBS & 0.03204 & 0 & 210230.95 \\
+softplus / \$\textbackslash\{\}sigma\$ & F2/O0 & SDR-PBS & 0.02709 & 0.001 & 105523.22 \\
+softplus / \$\textbackslash\{\}sigma\$ & F2/O256 & Standard PBS & 0.03204 & 0 & 210508.61 \\
+softplus / \$\textbackslash\{\}sigma\$ & F2/O256 & SDR-PBS & 0.02709 & 0 & 104889.42 \\
+softplus / \$\textbackslash\{\}sigma\$ & F2/O512 & Standard PBS & 0.03204 & 0 & 209980.53 \\
+softplus / \$\textbackslash\{\}sigma\$ & F2/O512 & SDR-PBS & 0.02709 & 0 & 106882.62 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & F1/O0 & Standard PBS & 0.01457 & 0.002 & 103580.86 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & F1/O0 & SDR-PBS & 0.01366 & 0 & 52033.58 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & F2/O0 & Standard PBS & 0.8581 & 0.001 & 209808.68 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & F2/O0 & SDR-PBS & 0.05485 & 0.006 & 105160.28 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & F2/O256 & Standard PBS & 0.01241 & 0 & 209535.19 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & F2/O256 & SDR-PBS & 0.01354 & 0.005 & 105205.06 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & F2/O512 & Standard PBS & 0.01241 & 0 & 210207.00 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & F2/O512 & SDR-PBS & 0.01354 & 0.005 & 105260.10 \\
+\bottomrule
+\end{tabular}

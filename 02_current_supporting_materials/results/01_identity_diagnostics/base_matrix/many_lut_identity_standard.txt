@@ -1,0 +1,40 @@
+﻿=== Identity PBS diagnostic ===
+params: lwe_dim=930, glwe_dim=1, poly_size=4096, pbs_base_log=15, pbs_level=2
+noise std: lwe=6.782e-7, glwe=2.168e-19
+sampling: samples_per_message=4, edge_window=16, message_limit=Some(128)
+bootstrap key path: seeded->decompress
+modulus switch mode: standard
+diagnostic mode: many_lut_identity_2
+generating bootstrap key...
+
+=== Identity PBS diagnostic: 10-bit ===
+total trials            : 1000
+exact decode rate       : 13.2000%
+padding-wrap rate       : 0.5000%
+valid-range violations  : 3
+|error| > 1 codeword    : 650
+|error| > 2 codewords   : 456
+|error| > 4 codewords   : 168
+|error| > 8 codewords   : 14
+max |error|             : 1024
+first failure examples  :
+  msg=0 trial=0 raw=3 decoded=3 signed_error=3
+  msg=0 trial=0 raw=3 decoded=3 signed_error=3
+  msg=0 trial=2 raw=2 decoded=2 signed_error=2
+  msg=0 trial=2 raw=2 decoded=2 signed_error=2
+  msg=0 trial=3 raw=1 decoded=1 signed_error=1
+  msg=0 trial=3 raw=1 decoded=1 signed_error=1
+  msg=1 trial=0 raw=3074 decoded=1026 signed_error=-1023
+  msg=1 trial=0 raw=1022 decoded=1022 signed_error=1021
+  msg=1 trial=1 raw=3 decoded=3 signed_error=2
+  msg=1 trial=1 raw=3 decoded=3 signed_error=2
+  msg=1 trial=2 raw=5 decoded=5 signed_error=4
+  msg=1 trial=2 raw=5 decoded=5 signed_error=4
+  msg=2 trial=0 raw=7 decoded=7 signed_error=5
+  msg=2 trial=0 raw=7 decoded=7 signed_error=5
+  msg=2 trial=1 raw=5 decoded=5 signed_error=3
+  msg=2 trial=1 raw=5 decoded=5 signed_error=3
+  msg=2 trial=2 raw=6 decoded=6 signed_error=4
+  msg=2 trial=2 raw=6 decoded=6 signed_error=4
+  msg=2 trial=3 raw=6 decoded=6 signed_error=4
+  msg=2 trial=3 raw=6 decoded=6 signed_error=4

@@ -1,0 +1,43 @@
+[2026-03-23T14:35:51] START 07_codebook_validation\allpairs
+building runtimes...
+runtime standard           | lwe_dim=1012 poly=8192 pbs=(15,2) | seed=54601 | bsk_gen=2.47s fourier=0.34s
+runtime sdr_pbs              | lwe_dim=1012 poly=8192 pbs=(15,2) | seed=58697 | bsk_gen=2.45s fourier=0.10s
+runtime many-lut           | lwe_dim=1012 poly=8192 pbs=(15,2) | seed=62793 | bsk_gen=2.47s fourier=0.10s
+
+=== tanh_sech2 ===
+tanh_sech2 | standard_pbs | bits=10 | codebook inputs=1024 | exact=369 mismatches=655 max_code_err=(6, 11)
+tanh_sech2 | sdr_pbs | bits=10 | codebook inputs=1024 | exact=292 mismatches=732 max_code_err=(6, 13)
+tanh_sech2 | many_lut | bits=9 | codebook inputs=512 | exact=171 mismatches=341 max_code_err=(8, 11)
+
+=== sigmoid_sigmoid_deriv ===
+sigmoid_sigmoid_deriv | standard_pbs | bits=10 | codebook inputs=1024 | exact=484 mismatches=540 max_code_err=(9, 14)
+sigmoid_sigmoid_deriv | sdr_pbs | bits=10 | codebook inputs=1024 | exact=407 mismatches=617 max_code_err=(9, 13)
+sigmoid_sigmoid_deriv | many_lut | bits=9 | codebook inputs=512 | exact=231 mismatches=281 max_code_err=(9, 14)
+
+=== softplus_sigmoid ===
+softplus_sigmoid | standard_pbs | bits=10 | codebook inputs=1024 | exact=425 mismatches=599 max_code_err=(7, 6)
+softplus_sigmoid | sdr_pbs | bits=10 | codebook inputs=1024 | exact=363 mismatches=661 max_code_err=(6, 8)
+softplus_sigmoid | many_lut | bits=9 | codebook inputs=512 | exact=215 mismatches=297 max_code_err=(6, 7)
+
+=== swish_swish_deriv ===
+swish_swish_deriv | standard_pbs | bits=10 | codebook inputs=1024 | exact=477 mismatches=547 max_code_err=(8, 13)
+swish_swish_deriv | sdr_pbs | bits=10 | codebook inputs=1024 | exact=435 mismatches=589 max_code_err=(8, 10)
+swish_swish_deriv | many_lut | bits=9 | codebook inputs=512 | exact=242 mismatches=270 max_code_err=(6, 7)
+
+=== gelu_gelu_deriv ===
+gelu_gelu_deriv | standard_pbs | bits=10 | codebook inputs=1024 | exact=509 mismatches=515 max_code_err=(8, 16)
+gelu_gelu_deriv | sdr_pbs | bits=10 | codebook inputs=1024 | exact=477 mismatches=547 max_code_err=(8, 16)
+gelu_gelu_deriv | many_lut | bits=9 | codebook inputs=512 | exact=268 mismatches=244 max_code_err=(11, 11)
+
+=== elu_elu_deriv ===
+elu_elu_deriv | standard_pbs | bits=10 | codebook inputs=1024 | exact=429 mismatches=595 max_code_err=(7, 13)
+elu_elu_deriv | sdr_pbs | bits=10 | codebook inputs=1024 | exact=393 mismatches=631 max_code_err=(7, 21)
+elu_elu_deriv | many_lut | bits=9 | codebook inputs=512 | exact=230 mismatches=282 max_code_err=(5, 17)
+
+=== mish_mish_deriv ===
+mish_mish_deriv | standard_pbs | bits=10 | codebook inputs=1024 | exact=472 mismatches=552 max_code_err=(7, 11)
+mish_mish_deriv | sdr_pbs | bits=10 | codebook inputs=1024 | exact=440 mismatches=584 max_code_err=(7, 10)
+mish_mish_deriv | many_lut | bits=9 | codebook inputs=512 | exact=232 mismatches=280 max_code_err=(10, 13)
+
+codebook summary written to D:\Re-test-artifacts\paper-results\07_codebook_validation\allpairs\codebook_summary.csv
+[2026-03-23T15:20:12] END   07_codebook_validation\allpairs

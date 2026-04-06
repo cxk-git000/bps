@@ -1,0 +1,42 @@
+% Export-facing manuscript snippet for the end-to-end micro-pipeline section.
+% The workspace-authoritative version also lives in:
+%   E:\Re-test\paper\TDSC_REWRITE_SNIPPETS.tex
+
+\subsection{Application-Level End-to-End Micro-Pipeline}
+\label{subsec:end_to_end_results}
+
+To complement primitive-level evaluation, we further study an application-level end-to-end micro-pipeline that matches the security semantics of this paper. In this setting, the client encrypts one shared input, the server evaluates either two independent PBS calls (\emph{Standard PBS}) or one shared blind-rotation path (\emph{\SDRPBS}), and the client decrypts the recovered activation-derivative pair before applying a lightweight downstream computation. We use two normalized downstream tasks: a paired score
+\[
+\mathrm{score}=0.65\,a_{\mathrm{norm}}+0.35\,d_{\mathrm{norm}},
+\]
+and a paired update
+\[
+\mathrm{update}=0.50-0.40\,(a_{\mathrm{norm}}-0.50)\,d_{\mathrm{norm}},
+\]
+where $a_{\mathrm{norm}}$ and $d_{\mathrm{norm}}$ are the decoded activation and derivative values normalized to $[0,1]$ using their declared output encodings. This experiment does not claim a fully composable multi-output ciphertext interface; instead, it evaluates whether the proposed shared-input recovery path yields a practical end-to-end benefit in the decryption-end workflow actually targeted by the paper.
+
+Table~\ref{tab:end_to_end_micro_pipeline} summarizes the end-to-end results on three representative pairs: \emph{softplus / $\sigma$}, \emph{sigmoid / $\sigma'$}, and \emph{GELU / GELU$'$}. Averaged across the three pairs, \emph{\SDRPBS} reduces end-to-end latency from 229.8~ms to 115.4~ms relative to \emph{Standard PBS}, corresponding to an approximately $1.99\times$ speedup. At the same time, the downstream task error remains close: the mean score RMSE changes only from $1.44\times 10^{-3}$ to $1.51\times 10^{-3}$, and the mean update RMSE changes from $5.60\times 10^{-4}$ to $5.77\times 10^{-4}$. By contrast, \emph{Many-LUT} reaches a similar latency but yields noticeably larger downstream error, with mean score RMSE $2.97\times 10^{-3}$ and mean update RMSE $1.13\times 10^{-3}$. These results show that the latency benefit of \SDRPBS persists at the application level and is not merely an artifact of primitive-level timing.
+
+\begin{table}[!t]
+\caption{Application-level end-to-end micro-pipeline results}
+\label{tab:end_to_end_micro_pipeline}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3.2pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{tabular}{@{}l l c c c c c@{}}
+\toprule
+Pair & Scheme & Bits & Score RMSE & Update RMSE & Score sig.\ errors & End-to-end lat.\ (ms) \\
+\midrule
+sigmoid / $\sigma'$ & Standard PBS & 10 & 0.00147 & 0.000512 & 1 & 229.94 \\
+sigmoid / $\sigma'$ & SDR-PBS & 10 & 0.00155 & 0.000508 & 1 & 115.49 \\
+sigmoid / $\sigma'$ & Many-LUT & 9 & 0.00303 & 0.00103 & 24 & 115.10 \\
+softplus / $\sigma$ & Standard PBS & 10 & 0.00133 & 0.000505 & 0 & 229.47 \\
+softplus / $\sigma$ & SDR-PBS & 10 & 0.00148 & 0.000559 & 0 & 115.17 \\
+softplus / $\sigma$ & Many-LUT & 9 & 0.00277 & 0.00109 & 3 & 115.25 \\
+GELU / GELU$'$ & Standard PBS & 10 & 0.00154 & 0.000662 & 1 & 229.95 \\
+GELU / GELU$'$ & SDR-PBS & 10 & 0.00151 & 0.000662 & 0 & 115.40 \\
+GELU / GELU$'$ & Many-LUT & 9 & 0.00310 & 0.00128 & 10 & 115.32 \\
+\bottomrule
+\end{tabular}
+\end{table}

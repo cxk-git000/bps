@@ -1,0 +1,19 @@
+[2026-03-24T12:23:52] START 09_tail_stability_100k\gelu_gelu_deriv
+building runtimes...
+runtime standard           | lwe_dim=1012 poly=8192 pbs=(15,2) | seed=74803 | bsk_gen=2.58s fourier=0.35s
+runtime sdr_pbs              | lwe_dim=1012 poly=8192 pbs=(15,2) | seed=78899 | bsk_gen=2.49s fourier=0.10s
+
+=== gelu_gelu_deriv ===
+gelu_gelu_deriv | standard_pbs | bits=10 | points=100000
+  significant errors > 1.0% range: 1246
+  projection events: 0 | invalid outputs: 0 | avg eval: 212748.37 us
+  output1 [-0.1700, 4.0000] mean=4.438e-3 rmse=6.887e-3 p95=1.601e-2 max=4.101e-2
+  output2 [-0.1200, 1.1200] mean=1.421e-3 rmse=2.950e-3 p95=7.093e-3 max=3.383e-2
+gelu_gelu_deriv | sdr_pbs | bits=10 | points=100000
+  significant errors > 1.0% range: 1608
+  projection events: 100000 | invalid outputs: 0 | avg eval: 106308.50 us
+  output1 [-0.1700, 4.0000] mean=4.576e-3 rmse=7.117e-3 p95=1.666e-2 max=4.471e-2
+  output2 [-0.1200, 1.1200] mean=1.534e-3 rmse=3.208e-3 p95=7.687e-3 max=3.853e-2
+
+summary written to D:\Re-test-artifacts\paper-results\09_tail_stability_100k\gelu_gelu_deriv\summary.csv
+[2026-03-24T21:15:48] END   09_tail_stability_100k\gelu_gelu_deriv

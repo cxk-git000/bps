@@ -1,0 +1,5 @@
+﻿scheme,selected,seed,bsk_generation_s,fourier_conversion_s
+standard_pbs,true,64107,6.866956,0.487164
+sdr_pbs,true,68203,6.834613,0.220918
+many_lut,false,,,
+

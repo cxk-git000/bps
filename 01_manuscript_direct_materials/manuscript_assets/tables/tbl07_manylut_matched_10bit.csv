@@ -1,0 +1,10 @@
+Pair,Scheme,Bits,Worst-out. RMSE,Thr. err. (%),Latency (ms)
+tanh / $\mathrm{sech}^2$,Standard PBS,10,0.00285,0.10,211.52
+tanh / $\mathrm{sech}^2$,SDR-PBS,10,0.00274,0.30,105.44
+tanh / $\mathrm{sech}^2$,Many-LUT,10,0.00520,5.10,106.07
+softplus / $\sigma$,Standard PBS,10,0.00582,0.00,212.96
+softplus / $\sigma$,SDR-PBS,10,0.00584,0.00,105.88
+softplus / $\sigma$,Many-LUT,10,0.01194,0.90,105.86
+GELU / GELU$'$,Standard PBS,10,0.00673,1.40,211.80
+GELU / GELU$'$,SDR-PBS,10,0.00683,1.00,108.10
+GELU / GELU$'$,Many-LUT,10,0.01371,6.10,107.91

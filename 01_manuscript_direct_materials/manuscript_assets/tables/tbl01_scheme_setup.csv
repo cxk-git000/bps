@@ -1,0 +1,4 @@
+Scheme,Bits,LWE dim.,Poly size,PBS base,PBS levels,Layout
+Standard PBS,10,1012,8192,15,2,"guard factor=2, offset=512"
+SDR-PBS,10,1012,8192,15,2,"guard factor=2, offset=512"
+Many-LUT,9,1012,8192,15,2,"2 slots, factor=4, offset=256, used=0, 1"

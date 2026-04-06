@@ -1,0 +1,29 @@
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lllllll}
+\toprule
+Pair & Scheme & Bits & Exact (\%) & Max err f1 & Max err f2 & Time (us) \\
+\midrule
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & Standard PBS & 10 & 36.04 & 6 & 11 & 211124.33 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & SDR-PBS & 10 & 28.52 & 6 & 13 & 105702.58 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & Many-LUT & 9 & 33.40 & 8 & 11 & 106053.65 \\
+sigmoid / \$\textbackslash\{\}sigma'\$ & Standard PBS & 10 & 47.27 & 9 & 14 & 210962.08 \\
+sigmoid / \$\textbackslash\{\}sigma'\$ & SDR-PBS & 10 & 39.75 & 9 & 13 & 105695.69 \\
+sigmoid / \$\textbackslash\{\}sigma'\$ & Many-LUT & 9 & 45.12 & 9 & 14 & 105503.99 \\
+softplus / \$\textbackslash\{\}sigma\$ & Standard PBS & 10 & 41.50 & 7 & 6 & 210199.58 \\
+softplus / \$\textbackslash\{\}sigma\$ & SDR-PBS & 10 & 35.45 & 6 & 8 & 105455.58 \\
+softplus / \$\textbackslash\{\}sigma\$ & Many-LUT & 9 & 41.99 & 6 & 7 & 105569.34 \\
+swish / swish' & Standard PBS & 10 & 46.58 & 8 & 13 & 210215.04 \\
+swish / swish' & SDR-PBS & 10 & 42.48 & 8 & 10 & 105091.81 \\
+swish / swish' & Many-LUT & 9 & 47.27 & 6 & 7 & 105411.19 \\
+GELU / GELU' & Standard PBS & 10 & 49.71 & 8 & 16 & 209706.14 \\
+GELU / GELU' & SDR-PBS & 10 & 46.58 & 8 & 16 & 105208.27 \\
+GELU / GELU' & Many-LUT & 9 & 52.34 & 11 & 11 & 106210.28 \\
+ELU / ELU' & Standard PBS & 10 & 41.89 & 7 & 13 & 212053.36 \\
+ELU / ELU' & SDR-PBS & 10 & 38.38 & 7 & 21 & 106045.62 \\
+ELU / ELU' & Many-LUT & 9 & 44.92 & 5 & 17 & 106453.18 \\
+mish / mish' & Standard PBS & 10 & 46.09 & 7 & 11 & 211693.95 \\
+mish / mish' & SDR-PBS & 10 & 42.97 & 7 & 10 & 105199.33 \\
+mish / mish' & Many-LUT & 9 & 45.31 & 10 & 13 & 105523.52 \\
+\bottomrule
+\end{tabular}

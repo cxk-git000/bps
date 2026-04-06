@@ -1,0 +1,14 @@
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lllllllll}
+\toprule
+pair & scheme & points & sigerr\_1p0 & invalid\_outputs & worst\_p99 & worst\_p999 & worst\_max & avg\_eval\_us \\
+\midrule
+GELU / GELU' & Standard PBS & 100000 & 1246 & 0 & 0.02227 & 0.02994 & 0.04101 & 212748.37 \\
+GELU / GELU' & SDR-PBS & 100000 & 1608 & 0 & 0.02337 & 0.03099 & 0.04471 & 106308.50 \\
+sigmoid / \$\textbackslash\{\}sigma'\$ & Standard PBS & 100000 & 1332 & 0 & 0.006431 & 0.009293 & 0.01481 & 245863.69 \\
+sigmoid / \$\textbackslash\{\}sigma'\$ & SDR-PBS & 100000 & 1821 & 0 & 0.006608 & 0.009451 & 0.01434 & 108801.63 \\
+softplus / \$\textbackslash\{\}sigma\$ & Standard PBS & 100000 & 2 & 0 & 0.01911 & 0.02597 & 0.04128 & 231821.72 \\
+softplus / \$\textbackslash\{\}sigma\$ & SDR-PBS & 100000 & 3 & 0 & 0.01971 & 0.02688 & 0.04015 & 123896.70 \\
+\bottomrule
+\end{tabular}

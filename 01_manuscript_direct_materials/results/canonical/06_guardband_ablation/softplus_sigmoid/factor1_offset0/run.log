@@ -1,0 +1,19 @@
+[2026-03-23T13:38:57] START 06_guard_band_ablation\softplus_sigmoid\factor1_offset0
+building runtimes...
+runtime standard           | lwe_dim=1012 poly=4096 pbs=(15,2) | seed=44500 | bsk_gen=0.92s fourier=0.28s
+runtime sdr_pbs              | lwe_dim=1012 poly=4096 pbs=(15,2) | seed=48596 | bsk_gen=0.90s fourier=0.05s
+
+=== softplus_sigmoid ===
+softplus_sigmoid | standard_pbs | bits=10 | points=1000
+  significant errors > 1.0% range: 0
+  projection events: 0 | invalid outputs: 0 | avg eval: 106987.78 us
+  output1 [0.0180, 4.0180] mean=3.843e-3 rmse=5.691e-3 p95=1.247e-2 max=2.365e-2
+  output2 [0.0000, 1.0000] mean=9.949e-4 rmse=1.496e-3 p95=3.460e-3 max=7.283e-3
+softplus_sigmoid | sdr_pbs | bits=10 | points=1000
+  significant errors > 1.0% range: 0
+  projection events: 1000 | invalid outputs: 0 | avg eval: 53141.01 us
+  output1 [0.0180, 4.0180] mean=3.966e-3 rmse=5.960e-3 p95=1.410e-2 max=2.679e-2
+  output2 [0.0000, 1.0000] mean=9.977e-4 rmse=1.456e-3 p95=3.138e-3 max=8.313e-3
+
+summary written to D:\Re-test-artifacts\paper-results\06_guard_band_ablation\softplus_sigmoid\factor1_offset0\summary.csv
+[2026-03-23T13:41:41] END   06_guard_band_ablation\softplus_sigmoid\factor1_offset0

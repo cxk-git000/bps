@@ -1,0 +1,19 @@
+[2026-03-23T14:11:24] START 06_guard_band_ablation\tanh_sech2\factor2_offset512
+building runtimes...
+runtime standard           | lwe_dim=1012 poly=8192 pbs=(15,2) | seed=44500 | bsk_gen=2.49s fourier=0.34s
+runtime sdr_pbs              | lwe_dim=1012 poly=8192 pbs=(15,2) | seed=48596 | bsk_gen=2.47s fourier=0.10s
+
+=== tanh_sech2 ===
+tanh_sech2 | standard_pbs | bits=10 | points=1000
+  significant errors > 1.0% range: 0
+  projection events: 0 | invalid outputs: 0 | avg eval: 210207.00 us
+  output1 [-1.0000, 1.0000] mean=1.996e-3 rmse=2.863e-3 p95=6.379e-3 max=1.241e-2
+  output2 [0.0000, 1.0000] mean=1.819e-3 rmse=2.497e-3 p95=5.399e-3 max=9.986e-3
+tanh_sech2 | sdr_pbs | bits=10 | points=1000
+  significant errors > 1.0% range: 5
+  projection events: 1000 | invalid outputs: 0 | avg eval: 105260.10 us
+  output1 [-1.0000, 1.0000] mean=2.070e-3 rmse=3.016e-3 p95=6.710e-3 max=1.354e-2
+  output2 [0.0000, 1.0000] mean=2.044e-3 rmse=2.848e-3 p95=5.917e-3 max=1.320e-2
+
+summary written to D:\Re-test-artifacts\paper-results\06_guard_band_ablation\tanh_sech2\factor2_offset512\summary.csv
+[2026-03-23T14:16:49] END   06_guard_band_ablation\tanh_sech2\factor2_offset512

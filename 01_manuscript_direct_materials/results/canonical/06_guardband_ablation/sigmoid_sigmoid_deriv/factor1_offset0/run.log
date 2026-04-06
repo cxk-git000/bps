@@ -1,0 +1,19 @@
+[2026-03-23T14:16:49] START 06_guard_band_ablation\sigmoid_sigmoid_deriv\factor1_offset0
+building runtimes...
+runtime standard           | lwe_dim=1012 poly=4096 pbs=(15,2) | seed=44500 | bsk_gen=0.94s fourier=0.28s
+runtime sdr_pbs              | lwe_dim=1012 poly=4096 pbs=(15,2) | seed=48596 | bsk_gen=0.93s fourier=0.05s
+
+=== sigmoid_sigmoid_deriv ===
+sigmoid_sigmoid_deriv | standard_pbs | bits=10 | points=1000
+  significant errors > 1.0% range: 16
+  projection events: 0 | invalid outputs: 0 | avg eval: 102883.62 us
+  output1 [0.0000, 1.0000] mean=1.057e-3 rmse=1.829e-3 p95=4.066e-3 max=1.137e-2
+  output2 [0.0000, 0.2500] mean=4.751e-4 rmse=7.738e-4 p95=1.780e-3 max=4.729e-3
+sigmoid_sigmoid_deriv | sdr_pbs | bits=10 | points=1000
+  significant errors > 1.0% range: 14
+  projection events: 1000 | invalid outputs: 0 | avg eval: 52277.43 us
+  output1 [0.0000, 1.0000] mean=9.833e-4 rmse=1.649e-3 p95=3.773e-3 max=9.624e-3
+  output2 [0.0000, 0.2500] mean=4.780e-4 rmse=7.455e-4 p95=1.655e-3 max=3.346e-3
+
+summary written to D:\Re-test-artifacts\paper-results\06_guard_band_ablation\sigmoid_sigmoid_deriv\factor1_offset0\summary.csv
+[2026-03-23T14:19:28] END   06_guard_band_ablation\sigmoid_sigmoid_deriv\factor1_offset0

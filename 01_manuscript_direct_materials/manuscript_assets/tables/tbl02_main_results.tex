@@ -1,0 +1,29 @@
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llllll}
+\toprule
+Pair & Scheme & Bits & Error rate (\%) & Worst RMSE & Time (ms) \\
+\midrule
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & Standard PBS & 10 & 0.12 & 0.0028 & 246.02 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & SDR-PBS & 10 & 0.25 & 0.0029 & 124.25 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & Many-LUT & 9 & 6.17 & 0.0056 & 124.15 \\
+sigmoid / \$\textbackslash\{\}sigma'\$ & Standard PBS & 10 & 1.17 & 0.0017 & 247.88 \\
+sigmoid / \$\textbackslash\{\}sigma'\$ & SDR-PBS & 10 & 1.86 & 0.0017 & 124.10 \\
+sigmoid / \$\textbackslash\{\}sigma'\$ & Many-LUT & 9 & 11.69 & 0.0033 & 122.92 \\
+softplus / \$\textbackslash\{\}sigma\$ & Standard PBS & 10 & 0.00 & 0.0060 & 213.02 \\
+softplus / \$\textbackslash\{\}sigma\$ & SDR-PBS & 10 & 0.00 & 0.0061 & 106.61 \\
+softplus / \$\textbackslash\{\}sigma\$ & Many-LUT & 9 & 1.57 & 0.0120 & 106.90 \\
+swish / swish' & Standard PBS & 10 & 0.11 & 0.0069 & 212.21 \\
+swish / swish' & SDR-PBS & 10 & 0.21 & 0.0070 & 106.24 \\
+swish / swish' & Many-LUT & 9 & 4.76 & 0.0136 & 106.80 \\
+GELU / GELU' & Standard PBS & 10 & 1.31 & 0.0069 & 213.10 \\
+GELU / GELU' & SDR-PBS & 10 & 1.52 & 0.0071 & 106.37 \\
+GELU / GELU' & Many-LUT & 9 & 7.69 & 0.0138 & 106.62 \\
+ELU / ELU' & Standard PBS & 10 & 1.01 & 0.0060 & 212.79 \\
+ELU / ELU' & SDR-PBS & 10 & 1.44 & 0.0062 & 106.33 \\
+ELU / ELU' & Many-LUT & 9 & 5.73 & 0.0119 & 106.77 \\
+mish / mish' & Standard PBS & 10 & 0.08 & 0.0056 & 213.18 \\
+mish / mish' & SDR-PBS & 10 & 0.14 & 0.0058 & 106.48 \\
+mish / mish' & Many-LUT & 9 & 5.20 & 0.0113 & 106.54 \\
+\bottomrule
+\end{tabular}

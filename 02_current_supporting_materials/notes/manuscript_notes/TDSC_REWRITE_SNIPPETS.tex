@@ -1,0 +1,92 @@
+% Title replacement
+\title{Dependable Shared-Input Dual-Function Evaluation for Activation-Derivative Pairs in TFHE}
+
+% Abstract replacement
+\begin{abstract}
+Programmable bootstrapping (PBS) in Torus Fully Homomorphic Encryption (TFHE) is the dominant online primitive for encrypted nonlinear evaluation. In privacy-preserving neural computation, however, nonlinear operators often appear as shared-input pairs rather than isolated functions; a common example is an activation and its derivative evaluated at the same encrypted input. The standard TFHE approach handles such pairs with two independent PBS calls, which duplicates the dominant blind-rotation cost. This paper studies a specialized decryption-end dual-function setting in which one encrypted input is used to recover two correlated outputs after a shared blind-rotation path. We propose \emph{\SDRPBSfull} (\emph{\SDRPBS}), which combines a guarded joint accumulator, one blind rotation, dual coefficient extraction, and parity-aware joint decoding. To improve dependable continuous-function behavior for non-periodic functions, we further introduce a \emph{guard-band stabilization} mechanism that shifts the active interval away from the torus seam and converts small boundary perturbations from catastrophic wraparound events into bounded saturation events. We implement \emph{Standard PBS}, \emph{\SDRPBS}, and \emph{Many-LUT} in a unified \texttt{tfhe-rs}-based framework and evaluate them on seven activation-derivative pairs. At the validated operating points used in the main comparison, \SDRPBS reduces mean online latency from 222.6~ms to 111.5~ms relative to Standard PBS while keeping worst-output RMSE nearly unchanged (0.0051 vs.\ 0.0053) and thresholded error rate within the same order of magnitude (0.54\% vs.\ 0.77\%). Codebook, runtime-decomposition, multi-seed, and long-tail results further indicate that the speedup comes from removing one dominant blind-rotation path without introducing a new catastrophic numerical failure mode.
+\end{abstract}
+
+% Contributions replacement
+\begin{itemize}
+\item We formulate a specialized shared-input dual-function evaluation problem in TFHE and focus on activation-derivative pairs as a practically relevant instance for privacy-preserving neural computation.
+\item We design \emph{\SDRPBS}, a decryption-end dual-output evaluation path that combines a guarded joint accumulator, one blind rotation, dual coefficient extraction, and parity-aware joint decoding.
+\item We introduce a guard-band stabilization mechanism that suppresses seam-induced catastrophic outliers for non-periodic continuous functions by replacing potential wraparound failures with bounded boundary saturation.
+\item We provide a unified \texttt{tfhe-rs}-based implementation and a systematic empirical evaluation, including accuracy-latency tradeoffs, codebook behavior, runtime decomposition, multi-seed repeatability, and long-tail stability.
+\end{itemize}
+
+% Shorter introduction related-work bridge
+Recent work has substantially expanded the expressiveness and efficiency of programmable and functional bootstrapping in TFHE, including higher-precision PBS, full-domain and multi-value constructions, circuit-oriented extensions, and lower-level optimizations such as lookup compression, automorphism-based traversal, amortized bootstrapping, and improved transform layers. These advances strengthen the TFHE bootstrapping toolbox, but they do not directly target the specific problem studied here: dependable recovery of two correlated outputs from one shared encrypted input under one blind-rotation path.
+
+% Related-work fairness disclaimer
+Because prior works differ substantially in cryptographic setting, implementation maturity, parameterization, output semantics, and hardware environment, we restrict direct quantitative comparison in this paper to \emph{Standard PBS} and \emph{Many-LUT} implemented in the same framework. The broader prior literature is therefore used to position the problem and design space rather than to support direct runtime claims.
+
+% Quantization model clarification
+These quantization and guard-band choices are part of the evaluated system design rather than new cryptographic assumptions; they define the continuous-domain operating model under which the compared schemes are instantiated.
+
+% Guard factor versus box-layout clarification
+For clarity, the input guard factor and the local \SDRPBS box layout are distinct quantities and should not be conflated. In the validated \SDRPBS operating point, the guard factor is $\rho=2$, so the guarded interval count is $T=\rho L=2L$. The local joint accumulator layout then uses a box-4 structure inside each guarded interval, which yields the polynomial-size relation $N=4T=8L$. Accordingly, the ``2'' reported in the setup refers to guard expansion, whereas the ``4'' in Equations~\eqref{eq:sdrpbs-input-embedding} and the accumulator definition refers to the local dual-output layout used by \SDRPBS.
+
+% Cleaner Many-LUT comparison paragraph
+Compared with Many-LUT, \SDRPBS is not a slot-packing construction. Many-LUT stores the two lookup tables in different accumulator slots and recovers them through slot-wise extraction after a shared blind rotation. \SDRPBS instead uses a local box-4 layout in which the two outputs are encoded as parity-separated codewords within the same interval block. This distinction is central: both methods reuse one blind rotation, but they differ fundamentally in how the two outputs are represented and recovered.
+
+% Setup fairness paragraph
+This operating-point choice should be interpreted carefully. The main comparison is fully matched between \emph{Standard PBS} and \emph{\SDRPBS}, which use the same LWE dimension, polynomial size, decomposition parameters, and 10-bit quantization. \emph{Many-LUT} is instead reported at its highest validated stable point under the same 8192-polynomial setting, namely 9-bit quantization. Accordingly, \emph{Many-LUT} serves as a shared-blind-rotation baseline at its validated operating point rather than as a perfectly matched same-bitwidth competitor. We therefore use it to compare recovery structure and practical tradeoffs, while bitwidth sensitivity is examined separately.
+
+% Safer main-results sentence
+These results indicate that \SDRPBS improves efficiency primarily by removing one dominant blind-rotation path while incurring only a modest accuracy tradeoff at the validated operating point.
+
+% Codebook interpretation paragraph
+These exact-recovery percentages should be interpreted as a stringent discrete criterion rather than as a proxy for application-level failure. In the present setting, small torus-domain perturbations may shift the recovered code by a few nearby levels even when the final dequantized continuous-domain error remains very small. For this reason, we report codebook exact recovery together with maximum code displacement and continuous-domain metrics, and we do not treat less-than-perfect exact-code recovery as evidence of a distinct numerical failure mode.
+
+% Recommended subsection rename
+\subsection{Dependability Evaluation}
+\label{subsec:stability_results}
+
+% End-to-end subsection title
+\subsection{Application-Level End-to-End Micro-Pipeline}
+\label{subsec:end_to_end_results}
+
+% End-to-end setup paragraph
+To complement primitive-level evaluation, we further study an application-level end-to-end micro-pipeline that matches the security semantics of this paper. In this setting, the client encrypts one shared input, the server evaluates either two independent PBS calls (\emph{Standard PBS}) or one shared blind-rotation path (\emph{\SDRPBS}), and the client decrypts the recovered activation-derivative pair before applying a lightweight downstream computation. We use two normalized downstream tasks: a paired score
+\[
+\mathrm{score}=0.65\,a_{\mathrm{norm}}+0.35\,d_{\mathrm{norm}},
+\]
+and a paired update
+\[
+\mathrm{update}=0.50-0.40\,(a_{\mathrm{norm}}-0.50)\,d_{\mathrm{norm}},
+\]
+where $a_{\mathrm{norm}}$ and $d_{\mathrm{norm}}$ are the decoded activation and derivative values normalized to $[0,1]$ using their declared output encodings. This experiment does not claim a fully composable multi-output ciphertext interface; instead, it evaluates whether the proposed shared-input recovery path yields a practical end-to-end benefit in the decryption-end workflow actually targeted by the paper.
+
+% End-to-end results paragraph
+Table~\ref{tab:end_to_end_micro_pipeline} summarizes the end-to-end results on three representative pairs: \emph{softplus / $\sigma$}, \emph{sigmoid / $\sigma'$}, and \emph{GELU / GELU$'$}. Averaged across the three pairs, \emph{\SDRPBS} reduces end-to-end latency from 229.8~ms to 115.4~ms relative to \emph{Standard PBS}, corresponding to an approximately $1.99\times$ speedup. At the same time, the downstream task error remains close: the mean score RMSE changes only from $1.44\times 10^{-3}$ to $1.51\times 10^{-3}$, and the mean update RMSE changes from $5.60\times 10^{-4}$ to $5.77\times 10^{-4}$. By contrast, \emph{Many-LUT} reaches a similar latency but yields noticeably larger downstream error, with mean score RMSE $2.97\times 10^{-3}$ and mean update RMSE $1.13\times 10^{-3}$. These results show that the latency benefit of \SDRPBS persists at the application level and is not merely an artifact of primitive-level timing.
+
+% End-to-end discussion paragraph
+The representative-pair results also show that the downstream behavior remains stable across different nonlinear pairs. For \emph{sigmoid / $\sigma'$}, \emph{Standard PBS} and \emph{\SDRPBS} produce nearly identical downstream-update quality, with RMSE values $5.12\times10^{-4}$ and $5.08\times10^{-4}$, respectively, while end-to-end latency decreases from 229.9~ms to 115.5~ms. For \emph{softplus / $\sigma$}, the end-to-end latency decreases from 229.5~ms to 115.2~ms while both schemes produce zero significant downstream-update errors under the adopted threshold. For \emph{GELU / GELU$'$}, \emph{\SDRPBS} slightly improves the score RMSE (from $1.54\times10^{-3}$ to $1.51\times10^{-3}$) while preserving essentially identical update RMSE. This evidence supports the claim that the proposed shared-input recovery path remains useful when the recovered pair is immediately consumed by a realistic downstream computation.
+
+% End-to-end table
+\begin{table}[!t]
+\caption{Application-level end-to-end micro-pipeline results}
+\label{tab:end_to_end_micro_pipeline}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3.2pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{tabular}{@{}L{1.45cm}L{1.50cm}C{0.55cm}C{0.90cm}C{0.95cm}C{0.88cm}@{}}
+\toprule
+Pair & Scheme & Bits & \shortstack{Score\\RMSE} & \shortstack{Update\\RMSE} & \shortstack{Score sig.\\errors} & \shortstack{End-to-end\\lat. (ms)} \\
+\midrule
+sigmoid / $\sigma'$ & Standard PBS & 10 & 0.00147 & 0.000512 & 1 & 229.94 \\
+sigmoid / $\sigma'$ & sdr_pbs & 10 & 0.00155 & 0.000508 & 1 & 115.49 \\
+sigmoid / $\sigma'$ & Many-LUT & 9 & 0.00303 & 0.00103 & 24 & 115.10 \\
+softplus / $\sigma$ & Standard PBS & 10 & 0.00133 & 0.000505 & 0 & 229.47 \\
+softplus / $\sigma$ & sdr_pbs & 10 & 0.00148 & 0.000559 & 0 & 115.17 \\
+softplus / $\sigma$ & Many-LUT & 9 & 0.00277 & 0.00109 & 3 & 115.25 \\
+GELU / GELU$'$ & Standard PBS & 10 & 0.00154 & 0.000662 & 1 & 229.95 \\
+GELU / GELU$'$ & sdr_pbs & 10 & 0.00151 & 0.000662 & 0 & 115.40 \\
+GELU / GELU$'$ & Many-LUT & 9 & 0.00310 & 0.00128 & 10 & 115.32 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% Conclusion limitation paragraph
+The present work focuses on a specialized but practically important setting: two correlated outputs evaluated on the same encoded encrypted input and jointly recovered at the decryptor under the standard TFHE workflow. Accordingly, the paper does not claim a general composable multi-output ciphertext interface, and the current construction also relies on a structured box-4 layout and validated operating points. Extending the approach toward richer shared-input nonlinear operators, broader output interfaces, and lower offline memory or key costs remains important future work.

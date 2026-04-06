@@ -1,0 +1,19 @@
+[2026-03-23T16:39:32] START 09_tail_stability_100k\softplus_sigmoid
+building runtimes...
+runtime standard           | lwe_dim=1012 poly=8192 pbs=(15,2) | seed=74803 | bsk_gen=2.51s fourier=0.34s
+runtime sdr_pbs              | lwe_dim=1012 poly=8192 pbs=(15,2) | seed=78899 | bsk_gen=2.48s fourier=0.10s
+
+=== softplus_sigmoid ===
+softplus_sigmoid | standard_pbs | bits=10 | points=100000
+  significant errors > 1.0% range: 2
+  projection events: 0 | invalid outputs: 0 | avg eval: 231821.72 us
+  output1 [0.0180, 4.0180] mean=4.032e-3 rmse=5.948e-3 p95=1.337e-2 max=4.128e-2
+  output2 [0.0000, 1.0000] mean=9.624e-4 rmse=1.405e-3 p95=3.113e-3 max=1.037e-2
+softplus_sigmoid | sdr_pbs | bits=10 | points=100000
+  significant errors > 1.0% range: 3
+  projection events: 100000 | invalid outputs: 0 | avg eval: 123896.70 us
+  output1 [0.0180, 4.0180] mean=4.138e-3 rmse=6.124e-3 p95=1.380e-2 max=4.015e-2
+  output2 [0.0000, 1.0000] mean=1.040e-3 rmse=1.518e-3 p95=3.393e-3 max=1.214e-2
+
+summary written to D:\Re-test-artifacts\paper-results\09_tail_stability_100k\softplus_sigmoid\summary.csv
+[2026-03-24T02:32:32] END   09_tail_stability_100k\softplus_sigmoid

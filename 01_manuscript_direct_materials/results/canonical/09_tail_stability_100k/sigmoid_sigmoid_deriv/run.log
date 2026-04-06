@@ -1,0 +1,19 @@
+[2026-03-24T02:32:32] START 09_tail_stability_100k\sigmoid_sigmoid_deriv
+building runtimes...
+runtime standard           | lwe_dim=1012 poly=8192 pbs=(15,2) | seed=74803 | bsk_gen=3.94s fourier=0.35s
+runtime sdr_pbs              | lwe_dim=1012 poly=8192 pbs=(15,2) | seed=78899 | bsk_gen=3.92s fourier=0.13s
+
+=== sigmoid_sigmoid_deriv ===
+sigmoid_sigmoid_deriv | standard_pbs | bits=10 | points=100000
+  significant errors > 1.0% range: 1332
+  projection events: 0 | invalid outputs: 0 | avg eval: 245863.69 us
+  output1 [0.0000, 1.0000] mean=1.021e-3 rmse=1.706e-3 p95=3.949e-3 max=1.481e-2
+  output2 [0.0000, 0.2500] mean=4.790e-4 rmse=7.567e-4 p95=1.703e-3 max=5.820e-3
+sigmoid_sigmoid_deriv | sdr_pbs | bits=10 | points=100000
+  significant errors > 1.0% range: 1821
+  projection events: 100000 | invalid outputs: 0 | avg eval: 108801.63 us
+  output1 [0.0000, 1.0000] mean=1.044e-3 rmse=1.745e-3 p95=4.021e-3 max=1.434e-2
+  output2 [0.0000, 0.2500] mean=5.196e-4 rmse=8.189e-4 p95=1.873e-3 max=5.767e-3
+
+summary written to D:\Re-test-artifacts\paper-results\09_tail_stability_100k\sigmoid_sigmoid_deriv\summary.csv
+[2026-03-24T12:23:52] END   09_tail_stability_100k\sigmoid_sigmoid_deriv

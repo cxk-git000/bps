@@ -1,0 +1,19 @@
+[2026-03-23T15:35:06] START 08_bitwidth_sensitivity\tanh_sech2\bits_11
+building runtimes...
+runtime standard           | lwe_dim=1012 poly=16384 pbs=(15,2) | seed=64107 | bsk_gen=6.87s fourier=0.49s
+runtime sdr_pbs              | lwe_dim=1012 poly=16384 pbs=(15,2) | seed=68203 | bsk_gen=6.83s fourier=0.22s
+
+=== tanh_sech2 ===
+tanh_sech2 | standard_pbs | bits=11 | points=1000
+  significant errors > 1.0% range: 0
+  projection events: 0 | invalid outputs: 0 | avg eval: 446129.23 us
+  output1 [-1.0000, 1.0000] mean=9.902e-4 rmse=1.452e-3 p95=3.100e-3 max=6.314e-3
+  output2 [0.0000, 1.0000] mean=9.063e-4 rmse=1.266e-3 p95=2.630e-3 max=5.859e-3
+tanh_sech2 | sdr_pbs | bits=11 | points=1000
+  significant errors > 1.0% range: 0
+  projection events: 1000 | invalid outputs: 0 | avg eval: 225385.42 us
+  output1 [-1.0000, 1.0000] mean=9.291e-4 rmse=1.341e-3 p95=2.874e-3 max=6.105e-3
+  output2 [0.0000, 1.0000] mean=9.396e-4 rmse=1.276e-3 p95=2.809e-3 max=4.370e-3
+
+summary written to D:\Re-test-artifacts\paper-results\08_bitwidth_sensitivity\tanh_sech2\bits_11\summary.csv
+[2026-03-23T15:46:40] END   08_bitwidth_sensitivity\tanh_sech2\bits_11

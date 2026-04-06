@@ -1,0 +1,41 @@
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llllll}
+\toprule
+bitwidth\_pair & bitwidth & scheme & worst\_rmse & error\_rate & avg\_eval\_us \\
+\midrule
+GELU / GELU' & 10 & Standard PBS & 0.006726 & 0.014 & 211796.37 \\
+GELU / GELU' & 10 & SDR-PBS & 0.006833 & 0.01 & 108098.81 \\
+GELU / GELU' & 10 & Many-LUT & 0.01371 & 0.061 & 107913.69 \\
+GELU / GELU' & 11 & Standard PBS & 0.003501 & 0 & 443750.19 \\
+GELU / GELU' & 11 & SDR-PBS & 0.00351 & 0 & 222569.48 \\
+GELU / GELU' & 8 & Standard PBS & 0.02915 & 0.261 & 48900.60 \\
+GELU / GELU' & 8 & SDR-PBS & 0.02777 & 0.251 & 24648.46 \\
+GELU / GELU' & 8 & Many-LUT & 0.0157 & 0.084 & 105133.03 \\
+GELU / GELU' & 9 & Standard PBS & 0.01391 & 0.073 & 103934.21 \\
+GELU / GELU' & 9 & SDR-PBS & 0.0143 & 0.087 & 51576.83 \\
+GELU / GELU' & 9 & Many-LUT & 0.01318 & 0.088 & 105327.74 \\
+softplus / \$\textbackslash\{\}sigma\$ & 10 & Standard PBS & 0.005821 & 0 & 212963.21 \\
+softplus / \$\textbackslash\{\}sigma\$ & 10 & SDR-PBS & 0.00584 & 0 & 105879.40 \\
+softplus / \$\textbackslash\{\}sigma\$ & 10 & Many-LUT & 0.01194 & 0.009 & 105860.60 \\
+softplus / \$\textbackslash\{\}sigma\$ & 11 & Standard PBS & 0.003055 & 0 & 446409.39 \\
+softplus / \$\textbackslash\{\}sigma\$ & 11 & SDR-PBS & 0.003015 & 0 & 222216.53 \\
+softplus / \$\textbackslash\{\}sigma\$ & 8 & Standard PBS & 0.02522 & 0.181 & 49470.75 \\
+softplus / \$\textbackslash\{\}sigma\$ & 8 & SDR-PBS & 0.02368 & 0.177 & 24451.43 \\
+softplus / \$\textbackslash\{\}sigma\$ & 8 & Many-LUT & 0.0135 & 0.03 & 105596.68 \\
+softplus / \$\textbackslash\{\}sigma\$ & 9 & Standard PBS & 0.01198 & 0.019 & 104210.93 \\
+softplus / \$\textbackslash\{\}sigma\$ & 9 & SDR-PBS & 0.01216 & 0.019 & 52025.84 \\
+softplus / \$\textbackslash\{\}sigma\$ & 9 & Many-LUT & 0.0113 & 0.011 & 106207.98 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & 10 & Standard PBS & 0.002847 & 0.001 & 211523.34 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & 10 & SDR-PBS & 0.002736 & 0.003 & 105444.73 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & 10 & Many-LUT & 0.005202 & 0.051 & 106074.25 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & 11 & Standard PBS & 0.001452 & 0 & 446129.23 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & 11 & SDR-PBS & 0.001341 & 0 & 225385.42 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & 8 & Standard PBS & 0.01116 & 0.285 & 48921.31 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & 8 & SDR-PBS & 0.01098 & 0.304 & 24691.88 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & 8 & Many-LUT & 0.006195 & 0.113 & 105085.47 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & 9 & Standard PBS & 0.00551 & 0.056 & 103844.17 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & 9 & SDR-PBS & 0.005799 & 0.082 & 52440.41 \\
+tanh / \$\textbackslash\{\}mathrm\{sech\}^2\$ & 9 & Many-LUT & 0.00582 & 0.068 & 106947.47 \\
+\bottomrule
+\end{tabular}

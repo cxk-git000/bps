@@ -1,0 +1,25 @@
+[2026-03-23T15:23:17] START 08_bitwidth_sensitivity\tanh_sech2\bits_9
+building runtimes...
+runtime standard           | lwe_dim=1012 poly=4096 pbs=(15,2) | seed=64105 | bsk_gen=0.93s fourier=0.29s
+runtime sdr_pbs              | lwe_dim=1012 poly=4096 pbs=(15,2) | seed=68201 | bsk_gen=0.91s fourier=0.05s
+runtime many-lut           | lwe_dim=1012 poly=8192 pbs=(15,2) | seed=72297 | bsk_gen=2.48s fourier=0.35s
+
+=== tanh_sech2 ===
+tanh_sech2 | standard_pbs | bits=9 | points=1000
+  significant errors > 1.0% range: 56
+  projection events: 0 | invalid outputs: 0 | avg eval: 103844.17 us
+  output1 [-1.0000, 1.0000] mean=3.758e-3 rmse=5.510e-3 p95=1.270e-2 max=2.529e-2
+  output2 [0.0000, 1.0000] mean=3.460e-3 rmse=4.858e-3 p95=9.972e-3 max=2.467e-2
+tanh_sech2 | sdr_pbs | bits=9 | points=1000
+  significant errors > 1.0% range: 82
+  projection events: 1000 | invalid outputs: 0 | avg eval: 52440.41 us
+  output1 [-1.0000, 1.0000] mean=4.025e-3 rmse=5.799e-3 p95=1.346e-2 max=2.559e-2
+  output2 [0.0000, 1.0000] mean=3.890e-3 rmse=5.366e-3 p95=1.158e-2 max=2.470e-2
+tanh_sech2 | many_lut | bits=9 | points=1000
+  significant errors > 1.0% range: 68
+  projection events: 0 | invalid outputs: 0 | avg eval: 106947.47 us
+  output1 [-1.0000, 1.0000] mean=3.966e-3 rmse=5.820e-3 p95=1.298e-2 max=2.879e-2
+  output2 [0.0000, 1.0000] mean=3.593e-3 rmse=4.931e-3 p95=1.115e-2 max=1.879e-2
+
+summary written to D:\Re-test-artifacts\paper-results\08_bitwidth_sensitivity\tanh_sech2\bits_9\summary.csv
+[2026-03-23T15:27:50] END   08_bitwidth_sensitivity\tanh_sech2\bits_9

@@ -1,0 +1,7 @@
+pair,scheme,old_sig,new_sig,old_worst_max,new_worst_max
+tanh_sech2,standard_pbs,13,12.0,0.8589406946841,0.01762033823824
+tanh_sech2,sdr_pbs,25,25.0,1.963956861099,0.01791427520606
+sigmoid_sigmoid_deriv,standard_pbs,102,117.0,0.2453326041943,0.00996432880899
+sigmoid_sigmoid_deriv,sdr_pbs,157,186.0,0.9975199662601,0.01304648094292
+softplus_sigmoid,standard_pbs,3,0.0,3.993472643401,0.03306383461344
+softplus_sigmoid,sdr_pbs,11,0.0,3.996614792861,0.03439510254525

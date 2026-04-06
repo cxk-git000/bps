@@ -1,0 +1,125 @@
+building runtimes...
+runtime standard           | lwe_dim=1012 poly=8192 pbs=(15,2) | bsk_gen=3.04s fourier=0.34s
+runtime sdr_pbs              | lwe_dim=1012 poly=8192 pbs=(15,2) | bsk_gen=2.85s fourier=0.11s
+runtime many-lut           | lwe_dim=1012 poly=8192 pbs=(15,2) | bsk_gen=2.86s fourier=0.11s
+
+=== tanh_sech2 ===
+tanh_sech2 | standard_pbs | bits=10 | points=10000
+  significant errors > 1.0% range: 12
+  projection events: 0 | invalid outputs: 0 | avg eval: 246020.86 us
+  output1 [-1.0000, 1.0000] mean=1.914e-3 rmse=2.776e-3 p95=6.153e-3 max=1.762e-2
+  output2 [0.0000, 1.0000] mean=1.762e-3 rmse=2.435e-3 p95=5.307e-3 max=1.302e-2
+tanh_sech2 | sdr_pbs | bits=10 | points=10000
+  significant errors > 1.0% range: 25
+  projection events: 10000 | invalid outputs: 0 | avg eval: 124245.33 us
+  output1 [-1.0000, 1.0000] mean=1.973e-3 rmse=2.874e-3 p95=6.357e-3 max=1.791e-2
+  output2 [0.0000, 1.0000] mean=1.931e-3 rmse=2.676e-3 p95=5.818e-3 max=1.445e-2
+tanh_sech2 | many_lut | bits=9 | points=10000
+  significant errors > 1.0% range: 617
+  projection events: 0 | invalid outputs: 0 | avg eval: 124152.14 us
+  output1 [-1.0000, 1.0000] mean=3.806e-3 rmse=5.556e-3 p95=1.240e-2 max=3.280e-2
+  output2 [0.0000, 1.0000] mean=3.520e-3 rmse=4.883e-3 p95=1.059e-2 max=2.518e-2
+
+=== sigmoid_sigmoid_deriv ===
+sigmoid_sigmoid_deriv | standard_pbs | bits=10 | points=10000
+  significant errors > 1.0% range: 117
+  projection events: 0 | invalid outputs: 0 | avg eval: 247879.01 us
+  output1 [0.0000, 1.0000] mean=1.011e-3 rmse=1.678e-3 p95=3.894e-3 max=9.964e-3
+  output2 [0.0000, 0.2500] mean=4.743e-4 rmse=7.424e-4 p95=1.672e-3 max=3.933e-3
+sigmoid_sigmoid_deriv | sdr_pbs | bits=10 | points=10000
+  significant errors > 1.0% range: 186
+  projection events: 10000 | invalid outputs: 0 | avg eval: 124104.24 us
+  output1 [0.0000, 1.0000] mean=1.037e-3 rmse=1.726e-3 p95=3.949e-3 max=1.305e-2
+  output2 [0.0000, 0.2500] mean=5.144e-4 rmse=8.117e-4 p95=1.862e-3 max=4.929e-3
+sigmoid_sigmoid_deriv | many_lut | bits=9 | points=10000
+  significant errors > 1.0% range: 1169
+  projection events: 0 | invalid outputs: 0 | avg eval: 122924.32 us
+  output1 [0.0000, 1.0000] mean=2.022e-3 rmse=3.344e-3 p95=7.634e-3 max=2.299e-2
+  output2 [0.0000, 0.2500] mean=9.514e-4 rmse=1.503e-3 p95=3.391e-3 max=9.831e-3
+
+=== softplus_sigmoid ===
+softplus_sigmoid | standard_pbs | bits=10 | points=10000
+  significant errors > 1.0% range: 0
+  projection events: 0 | invalid outputs: 0 | avg eval: 213019.93 us
+  output1 [0.0180, 4.0180] mean=4.040e-3 rmse=6.000e-3 p95=1.351e-2 max=3.306e-2
+  output2 [0.0000, 1.0000] mean=9.635e-4 rmse=1.407e-3 p95=3.108e-3 max=8.140e-3
+softplus_sigmoid | sdr_pbs | bits=10 | points=10000
+  significant errors > 1.0% range: 0
+  projection events: 10000 | invalid outputs: 0 | avg eval: 106609.31 us
+  output1 [0.0180, 4.0180] mean=4.108e-3 rmse=6.059e-3 p95=1.338e-2 max=3.440e-2
+  output2 [0.0000, 1.0000] mean=1.028e-3 rmse=1.500e-3 p95=3.332e-3 max=8.556e-3
+softplus_sigmoid | many_lut | bits=9 | points=10000
+  significant errors > 1.0% range: 157
+  projection events: 0 | invalid outputs: 0 | avg eval: 106898.74 us
+  output1 [0.0180, 4.0180] mean=8.129e-3 rmse=1.200e-2 p95=2.630e-2 max=7.152e-2
+  output2 [0.0000, 1.0000] mean=1.965e-3 rmse=2.886e-3 p95=6.360e-3 max=1.881e-2
+
+=== swish_swish_deriv ===
+swish_swish_deriv | standard_pbs | bits=10 | points=10000
+  significant errors > 1.0% range: 11
+  projection events: 0 | invalid outputs: 0 | avg eval: 212213.65 us
+  output1 [-0.2785, 4.0000] mean=4.475e-3 rmse=6.868e-3 p95=1.592e-2 max=3.577e-2
+  output2 [-0.1000, 1.1000] mean=1.320e-3 rmse=2.274e-3 p95=5.393e-3 max=1.685e-2
+swish_swish_deriv | sdr_pbs | bits=10 | points=10000
+  significant errors > 1.0% range: 21
+  projection events: 10000 | invalid outputs: 0 | avg eval: 106235.17 us
+  output1 [-0.2785, 4.0000] mean=4.556e-3 rmse=6.996e-3 p95=1.640e-2 max=3.867e-2
+  output2 [-0.1000, 1.1000] mean=1.417e-3 rmse=2.460e-3 p95=5.832e-3 max=1.689e-2
+swish_swish_deriv | many_lut | bits=9 | points=10000
+  significant errors > 1.0% range: 476
+  projection events: 0 | invalid outputs: 0 | avg eval: 106797.39 us
+  output1 [-0.2785, 4.0000] mean=8.827e-3 rmse=1.363e-2 p95=3.132e-2 max=7.743e-2
+  output2 [-0.1000, 1.1000] mean=2.606e-3 rmse=4.489e-3 p95=1.066e-2 max=2.856e-2
+
+=== gelu_gelu_deriv ===
+gelu_gelu_deriv | standard_pbs | bits=10 | points=10000
+  significant errors > 1.0% range: 131
+  projection events: 0 | invalid outputs: 0 | avg eval: 213100.93 us
+  output1 [-0.1700, 4.0000] mean=4.464e-3 rmse=6.880e-3 p95=1.602e-2 max=4.282e-2
+  output2 [-0.1200, 1.1200] mean=1.444e-3 rmse=3.020e-3 p95=7.189e-3 max=2.846e-2
+gelu_gelu_deriv | sdr_pbs | bits=10 | points=10000
+  significant errors > 1.0% range: 152
+  projection events: 10000 | invalid outputs: 0 | avg eval: 106365.17 us
+  output1 [-0.1700, 4.0000] mean=4.563e-3 rmse=7.073e-3 p95=1.650e-2 max=3.977e-2
+  output2 [-0.1200, 1.1200] mean=1.510e-3 rmse=3.116e-3 p95=7.517e-3 max=2.889e-2
+gelu_gelu_deriv | many_lut | bits=9 | points=10000
+  significant errors > 1.0% range: 769
+  projection events: 0 | invalid outputs: 0 | avg eval: 106621.02 us
+  output1 [-0.1700, 4.0000] mean=8.801e-3 rmse=1.378e-2 p95=3.239e-2 max=6.982e-2
+  output2 [-0.1200, 1.1200] mean=2.876e-3 rmse=6.000e-3 p95=1.447e-2 max=5.059e-2
+
+=== elu_elu_deriv ===
+elu_elu_deriv | standard_pbs | bits=10 | points=10000
+  significant errors > 1.0% range: 101
+  projection events: 0 | invalid outputs: 0 | avg eval: 212788.96 us
+  output1 [-1.0000, 3.0000] mean=4.018e-3 rmse=5.963e-3 p95=1.357e-2 max=3.570e-2
+  output2 [0.0000, 1.0000] mean=9.586e-4 rmse=2.220e-3 p95=4.880e-3 max=2.542e-2
+elu_elu_deriv | sdr_pbs | bits=10 | points=10000
+  significant errors > 1.0% range: 144
+  projection events: 10000 | invalid outputs: 0 | avg eval: 106329.85 us
+  output1 [-1.0000, 3.0000] mean=4.167e-3 rmse=6.216e-3 p95=1.431e-2 max=3.246e-2
+  output2 [0.0000, 1.0000] mean=1.046e-3 rmse=2.460e-3 p95=5.440e-3 max=2.751e-2
+elu_elu_deriv | many_lut | bits=9 | points=10000
+  significant errors > 1.0% range: 573
+  projection events: 0 | invalid outputs: 0 | avg eval: 106769.65 us
+  output1 [-1.0000, 3.0000] mean=8.068e-3 rmse=1.193e-2 p95=2.746e-2 max=6.989e-2
+  output2 [0.0000, 1.0000] mean=1.915e-3 rmse=4.428e-3 p95=1.005e-2 max=4.412e-2
+
+=== mish_mish_deriv ===
+mish_mish_deriv | standard_pbs | bits=10 | points=10000
+  significant errors > 1.0% range: 8
+  projection events: 0 | invalid outputs: 0 | avg eval: 213178.22 us
+  output1 [-0.3100, 3.0000] mean=3.542e-3 rmse=5.616e-3 p95=1.303e-2 max=3.522e-2
+  output2 [-0.1100, 1.2600] mean=1.427e-3 rmse=2.410e-3 p95=5.676e-3 max=1.632e-2
+mish_mish_deriv | sdr_pbs | bits=10 | points=10000
+  significant errors > 1.0% range: 14
+  projection events: 10000 | invalid outputs: 0 | avg eval: 106478.79 us
+  output1 [-0.3100, 3.0000] mean=3.688e-3 rmse=5.839e-3 p95=1.359e-2 max=3.359e-2
+  output2 [-0.1100, 1.2600] mean=1.544e-3 rmse=2.623e-3 p95=6.074e-3 max=2.153e-2
+mish_mish_deriv | many_lut | bits=9 | points=10000
+  significant errors > 1.0% range: 520
+  projection events: 0 | invalid outputs: 0 | avg eval: 106543.90 us
+  output1 [-0.3100, 3.0000] mean=7.130e-3 rmse=1.128e-2 p95=2.642e-2 max=6.333e-2
+  output2 [-0.1100, 1.2600] mean=2.800e-3 rmse=4.869e-3 p95=1.145e-2 max=3.684e-2
+
+summary written to D:\Re-test-artifacts\run-data\2026-03-20\guardfix4-allpairs-10000\summary.csv
